@@ -1,0 +1,1177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props" Condition="Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C66BC42-9D8B-4FD4-9F4F-09FF3F607986}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>ABASSecurity.My.MyApplication</StartupObject>
+    <RootNamespace>ABASSecurity</RootNamespace>
+    <AssemblyName>ABASSecurity</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>Z:\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>ABASSecurity.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>true</Prefer32Bit>
+    <WarningLevel>1</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>ABASSecurity.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+    <WarningLevel>1</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Full.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoJSON.Net, Version=1.2.16.0, Culture=neutral, PublicKeyToken=42c00ea87f5f14d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\GeoJSON.Net.1.2.19\lib\net45\GeoJSON.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoJSON.Net.Contrib.MsSqlSpatial, Version=0.3.6.0, Culture=neutral, PublicKeyToken=42c00ea87f5f14d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\GeoJSON.Net.Contrib.MsSqlSpatial.0.3.6\lib\net45\GeoJSON.Net.Contrib.MsSqlSpatial.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.7.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.7.0.0\lib\net462\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.7.0.0\lib\net462\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=7.0.0.4, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.7.0.4\lib\net462\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.7.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.7.0.0\lib\net462\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Http, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Http.7.0.0\lib\net462\Microsoft.Extensions.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.7.0.0\lib\net462\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=7.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.7.0.1\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=7.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.7.0.1\lib\net462\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=7.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.7.0.0\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1586.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.160.1000.6\lib\net462\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Interop, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Interop.17.6.36389\lib\net472\Microsoft.VisualStudio.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop.8.0, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.8.0.17.6.36389\lib\net472\Microsoft.VisualStudio.Shell.Interop.8.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.3.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.3.9\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net463\System.AppContext.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Console, Version=4.0.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.1\lib\net46\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.118.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.118.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.118.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.7.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.1\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clases\ClaseConexion.vb" />
+    <Compile Include="DataSet\ABASDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ABASDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\InventarioDataSet.vb">
+      <DependentUpon>InventarioDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\OperacionesDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OperacionesDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\OtrosDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OtrosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FormRRHHDocumentos.Designer.vb">
+      <DependentUpon>FormRRHHDocumentos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormRRHHDocumentos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInventarioArmeriaMunicion.Designer.vb">
+      <DependentUpon>FormInventarioArmeriaMunicion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormInventarioArmeriaMunicion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAsignacionesCambios.Designer.vb">
+      <DependentUpon>FormAsignacionesCambios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAsignacionesCambios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAsignacionesDiasLibres.Designer.vb">
+      <DependentUpon>FormAsignacionesDiasLibres.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAsignacionesDiasLibres.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInventarioMobiliarioEquiposOficina.Designer.vb">
+      <DependentUpon>FormInventarioMobiliarioEquiposOficina.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormInventarioMobiliarioEquiposOficina.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInventarioMaterialesEquiposSeguridad.Designer.vb">
+      <DependentUpon>FormInventarioMaterialesEquiposSeguridad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormInventarioMaterialesEquiposSeguridad.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.vb">
+      <DependentUpon>FormLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAsignacionesPendientes.Designer.vb">
+      <DependentUpon>FormAsignacionesPendientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAsignacionesPendientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInventarioProveedoresAlmacenesVehiculos.Designer.vb">
+      <DependentUpon>FormInventarioProveedoresAlmacenesVehiculos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormInventarioProveedoresAlmacenesVehiculos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInventarioUniformes.Designer.vb">
+      <DependentUpon>FormInventarioUniformes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormInventarioUniformes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUsuarios.Designer.vb">
+      <DependentUpon>FormUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSet\InventarioDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InventarioDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\PlanillaDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanillaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet\PlanillaDataSet.vb">
+      <DependentUpon>PlanillaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Cliente\R_Clientes.Designer.vb">
+      <DependentUpon>R_Clientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Cliente\R_Clientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Cliente\R_ClientesSucursales.Designer.vb">
+      <DependentUpon>R_ClientesSucursales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Cliente\R_ClientesSucursales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_Armas.Designer.vb">
+      <DependentUpon>R_Armas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_Armas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_ArmasAlmacen.Designer.vb">
+      <DependentUpon>R_ArmasAlmacen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_ArmasAlmacen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_DevolucionUniforme.Designer.vb">
+      <DependentUpon>R_DevolucionUniforme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_DevolucionUniforme.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_EntregaUniforme.Designer.vb">
+      <DependentUpon>R_EntregaUniforme.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_EntregaUniforme.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_Equipos.Designer.vb">
+      <DependentUpon>R_Equipos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_Equipos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_Materiales.Designer.vb">
+      <DependentUpon>R_Materiales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_Materiales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_MovimientoMunicion.Designer.vb">
+      <DependentUpon>R_MovimientoMunicion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_MovimientoMunicion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_MovimientosArmas.Designer.vb">
+      <DependentUpon>R_MovimientosArmas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_MovimientosArmas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_MovimientosEquipo.Designer.vb">
+      <DependentUpon>R_MovimientosEquipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_MovimientosEquipo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_MovimientosUniformes.Designer.vb">
+      <DependentUpon>R_MovimientosUniformes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_MovimientosUniformes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_MovimientosMateriales.Designer.vb">
+      <DependentUpon>R_MovimientosMateriales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_MovimientosMateriales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_MovimientosUniformesTipo.Designer.vb">
+      <DependentUpon>R_MovimientosUniformesTipo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_MovimientosUniformesTipo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_Municion.Designer.vb">
+      <DependentUpon>R_Municion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_Municion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_TipoArmas.Designer.vb">
+      <DependentUpon>R_TipoArmas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_TipoArmas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_UniformeSucursal.Designer.vb">
+      <DependentUpon>R_UniformeSucursal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_UniformeSucursal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_Vehiculos.Designer.vb">
+      <DependentUpon>R_Vehiculos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Inventario\R_Vehiculos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Planilla\R_Boucher.Designer.vb">
+      <DependentUpon>R_Boucher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Planilla\R_Boucher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clases\ClaseBusquedasDinamicas.vb" />
+    <Compile Include="FormAsignaciones.designer.vb">
+      <DependentUpon>FormAsignaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAsignaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipalBlanco.Designer.vb">
+      <DependentUpon>FormPrincipalBlanco.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipalBlanco.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGraficas.Designer.vb">
+      <DependentUpon>FormGraficas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormGraficas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAsignacionesFaltas.Designer.vb">
+      <DependentUpon>FormAsignacionesFaltas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAsignacionesFaltas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPagos.Designer.vb">
+      <DependentUpon>FormPagos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPagos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRRHHDocumentos_BCK.designer.vb">
+      <DependentUpon>FormRRHHDocumentos_BCK.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormRRHHDocumentos_BCK.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPlanilla.designer.vb">
+      <DependentUpon>FormPlanilla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPlanilla.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal.designer.vb">
+      <DependentUpon>FormPrincipal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRRHH.designer.vb">
+      <DependentUpon>FormRRHH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormRRHH.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecordatorioMensaje.Designer.vb">
+      <DependentUpon>FormRecordatorioMensaje.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormRecordatorioMensaje.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clases\ClasePrivilegios.vb" />
+    <Compile Include="FormRecordatoriosGuardados.designer.vb">
+      <DependentUpon>FormRecordatoriosGuardados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormRecordatoriosGuardados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAsignacionesFaltasGuardadas.Designer.vb">
+      <DependentUpon>FormAsignacionesFaltasGuardadas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAsignacionesFaltasGuardadas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecordatorio.Designer.vb">
+      <DependentUpon>FormRecordatorio.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormRecordatorio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormClientes.Designer.vb">
+      <DependentUpon>FormClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOtros.designer.vb">
+      <DependentUpon>FormOtros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormOtros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="FormRRHHAspirantes.Designer.vb">
+      <DependentUpon>FormRRHHAspirantes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormRRHHAspirantes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Planilla\R_DetalledePlanilla.Designer.vb">
+      <DependentUpon>R_DetalledePlanilla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Planilla\R_DetalledePlanilla.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Planilla\R_DeduccionesUsuario.Designer.vb">
+      <DependentUpon>R_DeduccionesUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Planilla\R_DeduccionesUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Planilla\R_DetallePlanilla_Usuario.Designer.vb">
+      <DependentUpon>R_DetallePlanilla_Usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Planilla\R_DetallePlanilla_Usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Planilla\R_PlanillaUsuario.Designer.vb">
+      <DependentUpon>R_PlanillaUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Planilla\R_PlanillaUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_Carnet.Designer.vb">
+      <DependentUpon>R_Carnet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_Carnet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_DocumentosEmpleados.Designer.vb">
+      <DependentUpon>R_DocumentosEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_DocumentosEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_EmpleadosTotal.Designer.vb">
+      <DependentUpon>R_EmpleadosTotal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_EmpleadosTotal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_45.Designer.vb">
+      <DependentUpon>R_45.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_45.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_Aniversarios.Designer.vb">
+      <DependentUpon>R_Aniversarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_Aniversarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Operaciones\R_AsignacionesGenerales.Designer.vb">
+      <DependentUpon>R_AsignacionesGenerales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Operaciones\R_AsignacionesGenerales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Operaciones\R_AsignacionesporCliente.Designer.vb">
+      <DependentUpon>R_AsignacionesporCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Operaciones\R_AsignacionesporCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Operaciones\R_AsignacionporCodigo.Designer.vb">
+      <DependentUpon>R_AsignacionporCodigo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Operaciones\R_AsignacionporCodigo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_Cumple.Designer.vb">
+      <DependentUpon>R_Cumple.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_Cumple.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Planilla\R_Deducciones.Designer.vb">
+      <DependentUpon>R_Deducciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Planilla\R_Deducciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_EstadoEmpleado.Designer.vb">
+      <DependentUpon>R_EstadoEmpleado.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_EstadoEmpleado.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_Expedientes.designer.vb">
+      <DependentUpon>R_Expedientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_Expedientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_Inactivos.Designer.vb">
+      <DependentUpon>R_Inactivos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_Inactivos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_Planilla\R_Planilla.Designer.vb">
+      <DependentUpon>R_Planilla.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_Planilla\R_Planilla.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_Puestos.Designer.vb">
+      <DependentUpon>R_Puestos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_Puestos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_RegistroCarnet.Designer.vb">
+      <DependentUpon>R_RegistroCarnet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_RegistroCarnet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataSet\RRHHDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RRHHDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_TiposDocumentosEmpleados.Designer.vb">
+      <DependentUpon>R_TiposDocumentosEmpleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_RRHH\R_TiposDocumentosEmpleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormInventarioArmeriaMunicion.resx">
+      <DependentUpon>FormInventarioArmeriaMunicion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAsignacionesCambios.resx">
+      <DependentUpon>FormAsignacionesCambios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAsignacionesDiasLibres.resx">
+      <DependentUpon>FormAsignacionesDiasLibres.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInventarioMobiliarioEquiposOficina.resx">
+      <DependentUpon>FormInventarioMobiliarioEquiposOficina.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInventarioMaterialesEquiposSeguridad.resx">
+      <DependentUpon>FormInventarioMaterialesEquiposSeguridad.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAsignacionesPendientes.resx">
+      <DependentUpon>FormAsignacionesPendientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInventarioProveedoresAlmacenesVehiculos.resx">
+      <DependentUpon>FormInventarioProveedoresAlmacenesVehiculos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormInventarioUniformes.resx">
+      <DependentUpon>FormInventarioUniformes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRRHHDocumentos.resx">
+      <DependentUpon>FormRRHHDocumentos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsuarios.resx">
+      <DependentUpon>FormUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Cliente\R_Clientes.rdlc" />
+    <EmbeddedResource Include="Reportes_Cliente\R_Clientes.resx">
+      <DependentUpon>R_Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Cliente\R_ClientesSucursales.rdlc" />
+    <EmbeddedResource Include="Reportes_Cliente\R_ClientesSucursales.resx">
+      <DependentUpon>R_ClientesSucursales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_Armas.resx">
+      <DependentUpon>R_Armas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_ArmasAlmacen.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_ArmasAlmacen.resx">
+      <DependentUpon>R_ArmasAlmacen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_DevolucionUniforme.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_DevolucionUniforme.resx">
+      <DependentUpon>R_DevolucionUniforme.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_EntregaUniforme.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_EntregaUniforme.resx">
+      <DependentUpon>R_EntregaUniforme.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_Equipos.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_Equipos.resx">
+      <DependentUpon>R_Equipos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_Materiales.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_Materiales.resx">
+      <DependentUpon>R_Materiales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_MovimientoMunicion.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_MovimientoMunicion.resx">
+      <DependentUpon>R_MovimientoMunicion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_MovimientosArmas.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_MovimientosArmas.resx">
+      <DependentUpon>R_MovimientosArmas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_MovimientosEquipo.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_MovimientosEquipo.resx">
+      <DependentUpon>R_MovimientosEquipo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_MovimientosUniformes.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_MovimientosUniformes.resx">
+      <DependentUpon>R_MovimientosUniformes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_MovimientosMateriales.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_MovimientosMateriales.resx">
+      <DependentUpon>R_MovimientosMateriales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_MovimientosUniformesTipo.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_MovimientosUniformesTipo.resx">
+      <DependentUpon>R_MovimientosUniformesTipo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_Municion.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_Municion.resx">
+      <DependentUpon>R_Municion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_TipoArmas.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_TipoArmas.resx">
+      <DependentUpon>R_TipoArmas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_UniformeSucursal.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_UniformeSucursal.resx">
+      <DependentUpon>R_UniformeSucursal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Inventario\R_Vehiculos.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_Vehiculos.resx">
+      <DependentUpon>R_Vehiculos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Planilla\R_Boucher.resx">
+      <DependentUpon>R_Boucher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAsignaciones.resx">
+      <DependentUpon>FormAsignaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipalBlanco.resx">
+      <DependentUpon>FormPrincipalBlanco.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGraficas.resx">
+      <DependentUpon>FormGraficas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAsignacionesFaltas.resx">
+      <DependentUpon>FormAsignacionesFaltas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPagos.resx">
+      <DependentUpon>FormPagos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRRHHDocumentos_BCK.resx">
+      <DependentUpon>FormRRHHDocumentos_BCK.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPlanilla.resx">
+      <DependentUpon>FormPlanilla.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRRHH.resx">
+      <DependentUpon>FormRRHH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecordatorioMensaje.resx">
+      <DependentUpon>FormRecordatorioMensaje.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecordatoriosGuardados.resx">
+      <DependentUpon>FormRecordatoriosGuardados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAsignacionesFaltasGuardadas.resx">
+      <DependentUpon>FormAsignacionesFaltasGuardadas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecordatorio.resx">
+      <DependentUpon>FormRecordatorio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormClientes.resx">
+      <DependentUpon>FormClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOtros.resx">
+      <DependentUpon>FormOtros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRRHHAspirantes.resx">
+      <DependentUpon>FormRRHHAspirantes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Planilla\DetalledePlanilla.rdlc" />
+    <EmbeddedResource Include="Reportes_Planilla\R_DetalledePlanilla.resx">
+      <DependentUpon>R_DetalledePlanilla.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Planilla\R_DeduccionesUsuario.rdlc" />
+    <EmbeddedResource Include="Reportes_Planilla\R_DeduccionesUsuario.resx">
+      <DependentUpon>R_DeduccionesUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Planilla\R_DetallePlanilla_Usuario.rdlc" />
+    <EmbeddedResource Include="Reportes_Planilla\R_DetallePlanilla_Usuario.resx">
+      <DependentUpon>R_DetallePlanilla_Usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Planilla\R_PagosUsuario.rdlc" />
+    <EmbeddedResource Include="Reportes_Planilla\R_PlanillaUsuario.resx">
+      <DependentUpon>R_PlanillaUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_RRHH\R_Carnet.rdlc" />
+    <EmbeddedResource Include="Reportes_RRHH\R_Carnet.resx">
+      <DependentUpon>R_Carnet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_RRHH\R_DocumentosEmpleados.rdlc" />
+    <EmbeddedResource Include="Reportes_RRHH\R_DocumentosEmpleados.resx">
+      <DependentUpon>R_DocumentosEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_RRHH\R_EmpleadosTotal.resx">
+      <DependentUpon>R_EmpleadosTotal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_RRHH\R_45.resx">
+      <DependentUpon>R_45.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_RRHH\R_Aniversarios.rdlc" />
+    <EmbeddedResource Include="Reportes_RRHH\R_Aniversarios.resx">
+      <DependentUpon>R_Aniversarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_RRHH\R_EmpleadosTotal.rdlc" />
+    <EmbeddedResource Include="Reportes_RRHH\R_45.rdlc" />
+    <EmbeddedResource Include="Reportes_RRHH\R_Cumple.rdlc" />
+    <EmbeddedResource Include="Reportes_RRHH\R_Cumple.resx">
+      <DependentUpon>R_Cumple.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Operaciones\R_AsignacionesGenerales.rdlc" />
+    <EmbeddedResource Include="Reportes_Operaciones\R_AsignacionesGenerales.resx">
+      <DependentUpon>R_AsignacionesGenerales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Operaciones\R_AsignacionesporCliente.rdlc" />
+    <EmbeddedResource Include="Reportes_Operaciones\R_AsignacionesporCliente.resx">
+      <DependentUpon>R_AsignacionesporCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Operaciones\R_AsignacionporCodigo.rdlc" />
+    <EmbeddedResource Include="Reportes_Operaciones\R_AsignacionporCodigo.resx">
+      <DependentUpon>R_AsignacionporCodigo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Planilla\R_Deducciones.resx">
+      <DependentUpon>R_Deducciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_RRHH\R_EstadoEmpleado.resx">
+      <DependentUpon>R_EstadoEmpleado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_RRHH\R_EstadoEmpleados.rdlc" />
+    <EmbeddedResource Include="Reportes_RRHH\R_Expedientes.rdlc" />
+    <EmbeddedResource Include="Reportes_RRHH\R_Expedientes.resx">
+      <DependentUpon>R_Expedientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_RRHH\R_Inactivos.rdlc" />
+    <EmbeddedResource Include="Reportes_RRHH\R_Inactivos.resx">
+      <DependentUpon>R_Inactivos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Planilla\R_Planilla.resx">
+      <DependentUpon>R_Planilla.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_RRHH\R_Puestos.rdlc" />
+    <EmbeddedResource Include="Reportes_RRHH\R_Puestos.resx">
+      <DependentUpon>R_Puestos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_Planilla\Voucher.rdlc" />
+    <EmbeddedResource Include="Reportes_Planilla\Reporte_Deducciones.rdlc" />
+    <EmbeddedResource Include="Reportes_Planilla\Reporte_Planilla.rdlc" />
+    <EmbeddedResource Include="Reportes_RRHH\R_RegistroCarnet.resx">
+      <DependentUpon>R_RegistroCarnet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_RRHH\R_RegistroCarnet.rdlc" />
+    <EmbeddedResource Include="Reportes_Inventario\R_Armas.rdlc" />
+    <EmbeddedResource Include="Reportes_RRHH\R_TiposDocumentosEmpleados.rdlc" />
+    <EmbeddedResource Include="Reportes_RRHH\R_TiposDocumentosEmpleados.resx">
+      <DependentUpon>R_TiposDocumentosEmpleados.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DataSet\ABASDataSet.xsc">
+      <DependentUpon>ABASDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\ABASDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ABASDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\ABASDataSet.xss">
+      <DependentUpon>ABASDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\InventarioDataSet.xsc">
+      <DependentUpon>InventarioDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\InventarioDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InventarioDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\InventarioDataSet.xss">
+      <DependentUpon>InventarioDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\OperacionesDataSet.xsc">
+      <DependentUpon>OperacionesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\OperacionesDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OperacionesDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\OperacionesDataSet.xss">
+      <DependentUpon>OperacionesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\OtrosDataSet.xsc">
+      <DependentUpon>OtrosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\OtrosDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OtrosDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\OtrosDataSet.xss">
+      <DependentUpon>OtrosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\RRHHDataSet.xsc">
+      <DependentUpon>RRHHDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\RRHHDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RRHHDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\RRHHDataSet.xss">
+      <DependentUpon>RRHHDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\FotoseIconos\icons8_Arrow_Pointing_Down_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\FotoseIconos\icons8_Search_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\FotoseIconos\icons8_Add_User_Male_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\FotoseIconos\icons8_Back_Arrow_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\FotoseIconos\icons8_Long_Arrow_Left_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\FotoseIconos\icons8_Notification_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\FotoseIconos\icons8_Push_Pin_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\FotoseIconos\icons8_Refresh_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\FotoseIconos\icons8_Search_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\FotoseIconos\icons8_Trash_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\FotoseIconos\icons8_Trash_Can_32px_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\FotoseIconos\icons8_Filter_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\FotoseIconos\avatar_placeholder_temporary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet\PlanillaDataSet.xsc">
+      <DependentUpon>PlanillaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet\PlanillaDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PlanillaDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DataSet\PlanillaDataSet.xss">
+      <DependentUpon>PlanillaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\final.png" />
+    <Content Include="Resources\Full.ico" />
+    <None Include="Resources\icons8-left-64.png" />
+    <None Include="Resources\icons8-rigth-64.png" />
+    <None Include="My Project\FotoseIconos\icons8-mover-por-carretilla-32.png" />
+    <Content Include="My Project\FotoseIconos\icons8_Trash_Can_48px_4.png" />
+    <Content Include="My Project\FotoseIconos\icons8_Print_48px_2.png" />
+    <None Include="Resources\SIN_FOTO.png" />
+    <Content Include="My Project\FotoseIconos\Espalda_Carnet.png" />
+    <Content Include="My Project\FotoseIconos\Portada_Carnet.png" />
+    <Content Include="Resources\Full3.png" />
+    <Content Include="Resources\Icono.ico" />
+    <Content Include="Resources\icons8-add-96.png" />
+    <None Include="Resources\icons8-recordatorios-de-citas-90.png" />
+    <Content Include="Resources\Login2021.png" />
+    <Content Include="Resources\Login20211.png" />
+    <None Include="Resources\TONO.wav" />
+    <None Include="My Project\FotoseIconos\icons8_Contacts_96px.png" />
+    <None Include="My Project\FotoseIconos\icons8_Geo-fence_96px.png" />
+    <None Include="My Project\FotoseIconos\icons8_Meeting_96px.png" />
+    <None Include="My Project\FotoseIconos\icons8_Order_History_96px.png" />
+    <None Include="My Project\FotoseIconos\hotel-cashflow.jpg" />
+    <None Include="Resources\Loginfull.png" />
+    <None Include="My Project\FotoseIconos\icons8_Print_32px_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.SqlServer.Types.160.1000.6\build\net462\Microsoft.SqlServer.Types.props'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.118.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>

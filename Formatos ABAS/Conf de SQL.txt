@@ -1,0 +1,44 @@
+
+
+Usuario de SQL: ABAS
+CLAVE:          1234ABAS
+_________________________________________________
+Antes de instalar necistamos que la computadora tenga el framework 4.6.1 (si es windows 7 mas necesario aun)
+que tambien va en la carpeta con el nombre de: "NDP461-KB3102436-x86-x64-AllOS-ENU"
+
+
+Luego de instalar el Framework vamos a Copiar la carpeta "Sistema-Abas" en C:\
+ojo! solo en la computadora de administracion y la del gerente, esto para que los directorios de notificacion funcione.
+
+poner el formato de hora de las computadoras 07:40:00 (al menos en las que sonara la noificacion)
+
+-------------------------------------------------------------------------------------------------------
+
+ahora bien, para configurar la ip en la maquina que tiene el SQL 
+
+1. ABRIMOS EL "SQLServerManager14" (si no recuerdo creo que en abas esta el SQL2014 este se llama asi SQLServerManager12)
+
+si no lo podemos ver, precionamos: Windows + R, aparece la ventana ejecutar y escribimo SQLServerManager12 (dependiendo la version)
+
+2. 	dentro del SQLServerManager12 o 14
+2.1.	nos vamos al panel izquierdo la 4ta opcion "Configuracion de red de SQL Server"
+2.2.	desplagamos las opciones y abrimos el que diga "Protocolo de MSSQLSERVER"
+
+o en esta direccion C:\Windows\System32\SQLServerManager14
+ 
+nos apareceran 3 opciones 
+* memoria compartida
+* canalizaciones con nombre
+* tcp/ip
+fijarnos que esten habilitados todos (si no, clic derecho y habilitar)
+
+2.3.	Abrimos el "TCP/IP", nos aparece un cuadro y seleccionamos "Direcciones IP" (arriba en el tab control)
+2.4.	buscamos la ip que ocupa el segundo puesto en la lista independientemente que numero sea
+para no confundirte lo deje en 192.168.0.40 si no estoy mal
+ok! la remplazas 192.168.11.100 por la de zerotier, ya que esa sera la maquina con la IP numero 100
+
+y eso seria todo en el sql porque ya lo deje en red
+
+--------------------------------------------------------------------------------------------------------
+
+
