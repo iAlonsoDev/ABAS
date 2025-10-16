@@ -396,3 +396,5 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Formatos ABAS/Conf de SQL.txt
+/Formatos ABAS/Conf de Zerotier.txt
