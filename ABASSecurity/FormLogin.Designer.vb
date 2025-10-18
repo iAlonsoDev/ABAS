@@ -23,29 +23,15 @@ Partial Class FormLogin
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLogin))
-        Me.cmdSalir = New System.Windows.Forms.Button()
         Me.cmdentrar = New System.Windows.Forms.Button()
         Me.txtcontraseña = New System.Windows.Forms.TextBox()
         Me.txtusuario = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.cmdSalir = New System.Windows.Forms.Button()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'cmdSalir
-        '
-        Me.cmdSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.cmdSalir.FlatAppearance.BorderSize = 0
-        Me.cmdSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.cmdSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer))
-        Me.cmdSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmdSalir.Image = Global.ABASSecurity.My.Resources.Resources.icons8_Back_Arrow_32px1
-        Me.cmdSalir.Location = New System.Drawing.Point(287, 412)
-        Me.cmdSalir.Name = "cmdSalir"
-        Me.cmdSalir.Size = New System.Drawing.Size(44, 36)
-        Me.cmdSalir.TabIndex = 0
-        Me.cmdSalir.UseVisualStyleBackColor = False
         '
         'cmdentrar
         '
@@ -140,6 +126,20 @@ Partial Class FormLogin
         Me.TextBox2.Text = "USUARIO"
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'cmdSalir
+        '
+        Me.cmdSalir.BackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.cmdSalir.FlatAppearance.BorderSize = 0
+        Me.cmdSalir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.cmdSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(206, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(45, Byte), Integer))
+        Me.cmdSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmdSalir.Image = Global.ABASSecurity.My.Resources.Resources.icons8_Back_Arrow_32px1
+        Me.cmdSalir.Location = New System.Drawing.Point(287, 412)
+        Me.cmdSalir.Name = "cmdSalir"
+        Me.cmdSalir.Size = New System.Drawing.Size(44, 36)
+        Me.cmdSalir.TabIndex = 0
+        Me.cmdSalir.UseVisualStyleBackColor = False
+        '
         'FormLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -162,11 +162,12 @@ Partial Class FormLogin
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents cmdSalir As Button
+    'Friend WithEvents cmdSalir As Button
     Friend WithEvents cmdentrar As Button
     Friend WithEvents txtcontraseña As TextBox
     Friend WithEvents txtusuario As TextBox
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents cmdSalir As Button
 End Class

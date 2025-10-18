@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FormUsuarios
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FormUsuarios
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim CodigoLabel As System.Windows.Forms.Label
@@ -43,8 +43,6 @@ Partial Class FormUsuarios
         Me.CheckBox9 = New System.Windows.Forms.CheckBox()
         Me.CmdGuardar = New System.Windows.Forms.Button()
         Me.ContraseñaTextBox = New System.Windows.Forms.TextBox()
-        Me.UsuariosModulosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ABASDataSet = New ABASSecurity.ABASDataSet()
         Me.UsuarioTextBox = New System.Windows.Forms.TextBox()
         Me.CodigoTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -62,9 +60,6 @@ Partial Class FormUsuarios
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.EmpleadosDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn15 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn16 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.identidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.EmpleadosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -77,33 +72,10 @@ Partial Class FormUsuarios
         Me.Aprueba2ComboBox = New System.Windows.Forms.ComboBox()
         Me.Aprueba1ComboBox = New System.Windows.Forms.ComboBox()
         Me.AlmacenComboBox = New System.Windows.Forms.ComboBox()
-        Me.UsuariosModulosTableAdapter = New ABASSecurity.ABASDataSetTableAdapters.UsuariosModulosTableAdapter()
+        Me.UsuariosModulosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.ABASDataSet = New ABASSecurity.ABASDataSet()
         Me.TableAdapterManager = New ABASSecurity.ABASDataSetTableAdapters.TableAdapterManager()
         Me.EmpleadosTableAdapter = New ABASSecurity.ABASDataSetTableAdapters.EmpleadosTableAdapter()
-        Me.UsuariosModulosDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn17 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn18 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn19 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn21 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn20 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Clientes = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn22 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn23 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn24 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn25 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CodigoLabel = New System.Windows.Forms.Label()
         UsuarioLabel = New System.Windows.Forms.Label()
         ContraseñaLabel = New System.Windows.Forms.Label()
@@ -113,8 +85,6 @@ Partial Class FormUsuarios
         AlmacenLabel = New System.Windows.Forms.Label()
         Me.GroupBox2.SuspendLayout()
         CType(Me.CmdBuscar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UsuariosModulosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ABASDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
@@ -124,6 +94,7 @@ Partial Class FormUsuarios
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         CType(Me.UsuariosModulosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ABASDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'CodigoLabel
@@ -344,25 +315,13 @@ Partial Class FormUsuarios
         '
         'ContraseñaTextBox
         '
-        Me.ContraseñaTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosModulosBindingSource, "Contraseña", True))
         Me.ContraseñaTextBox.Location = New System.Drawing.Point(79, 80)
         Me.ContraseñaTextBox.Name = "ContraseñaTextBox"
         Me.ContraseñaTextBox.Size = New System.Drawing.Size(121, 20)
         Me.ContraseñaTextBox.TabIndex = 5
         '
-        'UsuariosModulosBindingSource
-        '
-        Me.UsuariosModulosBindingSource.DataMember = "UsuariosModulos"
-        Me.UsuariosModulosBindingSource.DataSource = Me.ABASDataSet
-        '
-        'ABASDataSet
-        '
-        Me.ABASDataSet.DataSetName = "ABASDataSet"
-        Me.ABASDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'UsuarioTextBox
         '
-        Me.UsuarioTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosModulosBindingSource, "Usuario", True))
         Me.UsuarioTextBox.Location = New System.Drawing.Point(79, 54)
         Me.UsuarioTextBox.Name = "UsuarioTextBox"
         Me.UsuarioTextBox.Size = New System.Drawing.Size(121, 20)
@@ -370,7 +329,6 @@ Partial Class FormUsuarios
         '
         'CodigoTextBox
         '
-        Me.CodigoTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.UsuariosModulosBindingSource, "Codigo", True))
         Me.CodigoTextBox.Location = New System.Drawing.Point(79, 28)
         Me.CodigoTextBox.Name = "CodigoTextBox"
         Me.CodigoTextBox.ReadOnly = True
@@ -497,7 +455,7 @@ Partial Class FormUsuarios
         Me.TextBox1.Location = New System.Drawing.Point(153, 10)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(789, 137)
+        Me.TextBox1.Size = New System.Drawing.Size(829, 137)
         Me.TextBox1.TabIndex = 1
         Me.TextBox1.Text = resources.GetString("TextBox1.Text")
         '
@@ -517,9 +475,9 @@ Partial Class FormUsuarios
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(0, 515)
+        Me.Panel1.Location = New System.Drawing.Point(0, 543)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(965, 169)
+        Me.Panel1.Size = New System.Drawing.Size(1005, 169)
         Me.Panel1.TabIndex = 20
         '
         'Panel2
@@ -544,7 +502,7 @@ Partial Class FormUsuarios
         Me.EmpleadosDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.EmpleadosDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.EmpleadosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.EmpleadosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.identidad})
+        Me.EmpleadosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.identidad})
         Me.EmpleadosDataGridView.DataSource = Me.EmpleadosBindingSource
         Me.EmpleadosDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.EmpleadosDataGridView.Location = New System.Drawing.Point(0, 45)
@@ -552,28 +510,6 @@ Partial Class FormUsuarios
         Me.EmpleadosDataGridView.RowHeadersVisible = False
         Me.EmpleadosDataGridView.Size = New System.Drawing.Size(556, 298)
         Me.EmpleadosDataGridView.TabIndex = 14
-        '
-        'DataGridViewTextBoxColumn14
-        '
-        Me.DataGridViewTextBoxColumn14.DataPropertyName = "codigo"
-        Me.DataGridViewTextBoxColumn14.HeaderText = "Codigo"
-        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
-        Me.DataGridViewTextBoxColumn14.ReadOnly = True
-        Me.DataGridViewTextBoxColumn14.Width = 65
-        '
-        'DataGridViewTextBoxColumn15
-        '
-        Me.DataGridViewTextBoxColumn15.DataPropertyName = "nombres"
-        Me.DataGridViewTextBoxColumn15.HeaderText = "Nombres"
-        Me.DataGridViewTextBoxColumn15.Name = "DataGridViewTextBoxColumn15"
-        Me.DataGridViewTextBoxColumn15.Width = 74
-        '
-        'DataGridViewTextBoxColumn16
-        '
-        Me.DataGridViewTextBoxColumn16.DataPropertyName = "apellidos"
-        Me.DataGridViewTextBoxColumn16.HeaderText = "Apellidos"
-        Me.DataGridViewTextBoxColumn16.Name = "DataGridViewTextBoxColumn16"
-        Me.DataGridViewTextBoxColumn16.Width = 74
         '
         'identidad
         '
@@ -585,7 +521,6 @@ Partial Class FormUsuarios
         'EmpleadosBindingSource
         '
         Me.EmpleadosBindingSource.DataMember = "Empleados"
-        Me.EmpleadosBindingSource.DataSource = Me.ABASDataSet
         '
         'Panel3
         '
@@ -699,14 +634,34 @@ Partial Class FormUsuarios
         Me.AlmacenComboBox.Size = New System.Drawing.Size(83, 21)
         Me.AlmacenComboBox.TabIndex = 1
         '
-        'UsuariosModulosTableAdapter
+        'UsuariosModulosDataGridView
         '
-        Me.UsuariosModulosTableAdapter.ClearBeforeFill = True
+        Me.UsuariosModulosDataGridView.AllowUserToDeleteRows = False
+        Me.UsuariosModulosDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.UsuariosModulosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
+        Me.UsuariosModulosDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
+        Me.UsuariosModulosDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        Me.UsuariosModulosDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.UsuariosModulosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.UsuariosModulosDataGridView.Location = New System.Drawing.Point(0, 192)
+        Me.UsuariosModulosDataGridView.Name = "UsuariosModulosDataGridView"
+        Me.UsuariosModulosDataGridView.ReadOnly = True
+        Me.UsuariosModulosDataGridView.RowHeadersVisible = False
+        Me.UsuariosModulosDataGridView.Size = New System.Drawing.Size(1005, 345)
+        Me.UsuariosModulosDataGridView.TabIndex = 37
+        '
+        'ABASDataSet
+        '
+        Me.ABASDataSet.DataSetName = "ABASDataSet"
+        Me.ABASDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TableAdapterManager
         '
         Me.TableAdapterManager.AlmacenesTableAdapter = Nothing
         Me.TableAdapterManager.AnticiposTableAdapter = Nothing
+        Me.TableAdapterManager.ArmeriaFotosTableAdapter = Nothing
         Me.TableAdapterManager.ArmeriaTableAdapter = Nothing
         Me.TableAdapterManager.AsignacionesTableAdapter = Nothing
         Me.TableAdapterManager.AspirantesTableAdapter = Nothing
@@ -719,7 +674,9 @@ Partial Class FormUsuarios
         Me.TableAdapterManager.DevolucionUniformeDetalleTableAdapter = Nothing
         Me.TableAdapterManager.DevolucionUniformeTableAdapter = Nothing
         Me.TableAdapterManager.DiasTableAdapter = Nothing
+        Me.TableAdapterManager.DocumentosEmpleadosTableAdapter = Nothing
         Me.TableAdapterManager.EmpleadosTableAdapter = Me.EmpleadosTableAdapter
+        Me.TableAdapterManager.EquiposFotosTableAdapter = Nothing
         Me.TableAdapterManager.EquiposTableAdapter = Nothing
         Me.TableAdapterManager.ExpedientesTableAdapter = Nothing
         Me.TableAdapterManager.FaltasTableAdapter = Nothing
@@ -731,237 +688,40 @@ Partial Class FormUsuarios
         Me.TableAdapterManager.MovimientoArmasTableAdapter = Nothing
         Me.TableAdapterManager.MovimientoEquiposTableAdapter = Nothing
         Me.TableAdapterManager.MovimientoMaterialesTableAdapter = Nothing
+        Me.TableAdapterManager.MovimientoMunicionTableAdapter = Nothing
         Me.TableAdapterManager.MovimientoUniformesTableAdapter = Nothing
+        Me.TableAdapterManager.MunicionFotosTableAdapter = Nothing
+        Me.TableAdapterManager.MunicionTableAdapter = Nothing
         Me.TableAdapterManager.PagosTableAdapter = Nothing
         Me.TableAdapterManager.PlanillasTableAdapter = Nothing
+        Me.TableAdapterManager.PreciosCarnetTableAdapter = Nothing
         Me.TableAdapterManager.ProveedoresTableAdapter = Nothing
         Me.TableAdapterManager.RecordatorioTableAdapter = Nothing
         Me.TableAdapterManager.RegistroCarnetTableAdapter = Nothing
         Me.TableAdapterManager.RegistroLoginTableAdapter = Nothing
         Me.TableAdapterManager.SolicitudUniformeTableAdapter = Nothing
         Me.TableAdapterManager.SucursalesTableAdapter = Nothing
+        Me.TableAdapterManager.TipoDocumentosEmpleadosTableAdapter = Nothing
+        Me.TableAdapterManager.TipoMaterialesTableAdapter = Nothing
+        Me.TableAdapterManager.TipoMunicionTableAdapter = Nothing
         Me.TableAdapterManager.UbicacionesTableAdapter = Nothing
         Me.TableAdapterManager.UniformesRIngresosTableAdapter = Nothing
         Me.TableAdapterManager.UniformesTableAdapter = Nothing
         Me.TableAdapterManager.UpdateNVTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = ABASSecurity.ABASDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
-        Me.TableAdapterManager.UsuariosModulosTableAdapter = Me.UsuariosModulosTableAdapter
+        Me.TableAdapterManager.UsuariosModulosTableAdapter = Nothing
+        Me.TableAdapterManager.VehiculosFotosTableAdapter = Nothing
+        Me.TableAdapterManager.VehiculosTableAdapter = Nothing
         '
         'EmpleadosTableAdapter
         '
         Me.EmpleadosTableAdapter.ClearBeforeFill = True
         '
-        'UsuariosModulosDataGridView
-        '
-        Me.UsuariosModulosDataGridView.AllowUserToDeleteRows = False
-        Me.UsuariosModulosDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.UsuariosModulosDataGridView.AutoGenerateColumns = False
-        Me.UsuariosModulosDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells
-        Me.UsuariosModulosDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells
-        Me.UsuariosModulosDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
-        Me.UsuariosModulosDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.UsuariosModulosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.UsuariosModulosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn5, Me.Clientes, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25})
-        Me.UsuariosModulosDataGridView.DataSource = Me.UsuariosModulosBindingSource
-        Me.UsuariosModulosDataGridView.Location = New System.Drawing.Point(0, 192)
-        Me.UsuariosModulosDataGridView.Name = "UsuariosModulosDataGridView"
-        Me.UsuariosModulosDataGridView.ReadOnly = True
-        Me.UsuariosModulosDataGridView.RowHeadersVisible = False
-        Me.UsuariosModulosDataGridView.Size = New System.Drawing.Size(965, 317)
-        Me.UsuariosModulosDataGridView.TabIndex = 37
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "ID"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Visible = False
-        Me.DataGridViewTextBoxColumn1.Width = 24
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Codigo"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Codigo"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 65
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Usuario"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Usuario"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 68
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "Contraseña"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "Contraseña"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        Me.DataGridViewTextBoxColumn4.Width = 86
-        '
-        'DataGridViewTextBoxColumn13
-        '
-        Me.DataGridViewTextBoxColumn13.DataPropertyName = "Rango1"
-        Me.DataGridViewTextBoxColumn13.HeaderText = "Rango1"
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        Me.DataGridViewTextBoxColumn13.ReadOnly = True
-        Me.DataGridViewTextBoxColumn13.Width = 70
-        '
-        'DataGridViewTextBoxColumn17
-        '
-        Me.DataGridViewTextBoxColumn17.DataPropertyName = "Rango2"
-        Me.DataGridViewTextBoxColumn17.HeaderText = "Rango2"
-        Me.DataGridViewTextBoxColumn17.Name = "DataGridViewTextBoxColumn17"
-        Me.DataGridViewTextBoxColumn17.ReadOnly = True
-        Me.DataGridViewTextBoxColumn17.Width = 70
-        '
-        'DataGridViewTextBoxColumn18
-        '
-        Me.DataGridViewTextBoxColumn18.DataPropertyName = "Rango3"
-        Me.DataGridViewTextBoxColumn18.HeaderText = "Rango3"
-        Me.DataGridViewTextBoxColumn18.Name = "DataGridViewTextBoxColumn18"
-        Me.DataGridViewTextBoxColumn18.ReadOnly = True
-        Me.DataGridViewTextBoxColumn18.Width = 70
-        '
-        'DataGridViewTextBoxColumn19
-        '
-        Me.DataGridViewTextBoxColumn19.DataPropertyName = "Rango4"
-        Me.DataGridViewTextBoxColumn19.HeaderText = "Rango4"
-        Me.DataGridViewTextBoxColumn19.Name = "DataGridViewTextBoxColumn19"
-        Me.DataGridViewTextBoxColumn19.ReadOnly = True
-        Me.DataGridViewTextBoxColumn19.Width = 70
-        '
-        'DataGridViewTextBoxColumn21
-        '
-        Me.DataGridViewTextBoxColumn21.DataPropertyName = "Rango5"
-        Me.DataGridViewTextBoxColumn21.HeaderText = "Rango5"
-        Me.DataGridViewTextBoxColumn21.Name = "DataGridViewTextBoxColumn21"
-        Me.DataGridViewTextBoxColumn21.ReadOnly = True
-        Me.DataGridViewTextBoxColumn21.Width = 70
-        '
-        'DataGridViewTextBoxColumn20
-        '
-        Me.DataGridViewTextBoxColumn20.DataPropertyName = "Rango6"
-        Me.DataGridViewTextBoxColumn20.HeaderText = "Rango6"
-        Me.DataGridViewTextBoxColumn20.Name = "DataGridViewTextBoxColumn20"
-        Me.DataGridViewTextBoxColumn20.ReadOnly = True
-        Me.DataGridViewTextBoxColumn20.Width = 70
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "RRHH"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "RRHH"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        Me.DataGridViewTextBoxColumn5.Width = 64
-        '
-        'Clientes
-        '
-        Me.Clientes.DataPropertyName = "Clientes"
-        Me.Clientes.HeaderText = "Clientes"
-        Me.Clientes.Name = "Clientes"
-        Me.Clientes.ReadOnly = True
-        Me.Clientes.Width = 69
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Operacion"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Operacion"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Width = 81
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Planilla"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Planilla"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        Me.DataGridViewTextBoxColumn7.Width = 65
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Pagos"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Pagos"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        Me.DataGridViewTextBoxColumn8.Width = 62
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "Graficas"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Graficas"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        Me.DataGridViewTextBoxColumn9.Width = 71
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "Inventario"
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Inventario"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.ReadOnly = True
-        Me.DataGridViewTextBoxColumn10.Width = 79
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.DataPropertyName = "Otros"
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Otros"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        Me.DataGridViewTextBoxColumn11.ReadOnly = True
-        Me.DataGridViewTextBoxColumn11.Width = 57
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.DataPropertyName = "Usuarios"
-        Me.DataGridViewTextBoxColumn12.HeaderText = "Usuarios"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        Me.DataGridViewTextBoxColumn12.ReadOnly = True
-        Me.DataGridViewTextBoxColumn12.Width = 73
-        '
-        'DataGridViewTextBoxColumn22
-        '
-        Me.DataGridViewTextBoxColumn22.DataPropertyName = "almacen"
-        Me.DataGridViewTextBoxColumn22.HeaderText = "Almacen"
-        Me.DataGridViewTextBoxColumn22.Name = "DataGridViewTextBoxColumn22"
-        Me.DataGridViewTextBoxColumn22.ReadOnly = True
-        Me.DataGridViewTextBoxColumn22.Width = 73
-        '
-        'DataGridViewTextBoxColumn23
-        '
-        Me.DataGridViewTextBoxColumn23.DataPropertyName = "aprueba1"
-        Me.DataGridViewTextBoxColumn23.HeaderText = "Aprueba1"
-        Me.DataGridViewTextBoxColumn23.Name = "DataGridViewTextBoxColumn23"
-        Me.DataGridViewTextBoxColumn23.ReadOnly = True
-        Me.DataGridViewTextBoxColumn23.Width = 78
-        '
-        'DataGridViewTextBoxColumn24
-        '
-        Me.DataGridViewTextBoxColumn24.DataPropertyName = "aprueba2"
-        Me.DataGridViewTextBoxColumn24.HeaderText = "Aprueba2"
-        Me.DataGridViewTextBoxColumn24.Name = "DataGridViewTextBoxColumn24"
-        Me.DataGridViewTextBoxColumn24.ReadOnly = True
-        Me.DataGridViewTextBoxColumn24.Width = 78
-        '
-        'DataGridViewTextBoxColumn25
-        '
-        Me.DataGridViewTextBoxColumn25.DataPropertyName = "nivel"
-        Me.DataGridViewTextBoxColumn25.HeaderText = "Nivel"
-        Me.DataGridViewTextBoxColumn25.Name = "DataGridViewTextBoxColumn25"
-        Me.DataGridViewTextBoxColumn25.ReadOnly = True
-        Me.DataGridViewTextBoxColumn25.Width = 56
-        '
         'FormUsuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(965, 684)
+        Me.ClientSize = New System.Drawing.Size(1005, 712)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.UsuariosModulosDataGridView)
@@ -974,8 +734,6 @@ Partial Class FormUsuarios
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.CmdBuscar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UsuariosModulosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ABASDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -989,14 +747,12 @@ Partial Class FormUsuarios
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         CType(Me.UsuariosModulosDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ABASDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents ABASDataSet As ABASDataSet
-    Friend WithEvents UsuariosModulosBindingSource As BindingSource
-    Friend WithEvents UsuariosModulosTableAdapter As ABASDataSetTableAdapters.UsuariosModulosTableAdapter
     Friend WithEvents TableAdapterManager As ABASDataSetTableAdapters.TableAdapterManager
     Friend WithEvents ContraseñaTextBox As TextBox
     Friend WithEvents UsuarioTextBox As TextBox
@@ -1025,9 +781,6 @@ Partial Class FormUsuarios
     Friend WithEvents EmpleadosTableAdapter As ABASDataSetTableAdapters.EmpleadosTableAdapter
     Friend WithEvents EmpleadosBindingSource As BindingSource
     Friend WithEvents EmpleadosDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn15 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn16 As DataGridViewTextBoxColumn
     Friend WithEvents identidad As DataGridViewTextBoxColumn
     Friend WithEvents CheckBox13 As CheckBox
     Friend WithEvents CheckBox12 As CheckBox
@@ -1043,27 +796,5 @@ Partial Class FormUsuarios
     Friend WithEvents AlmacenComboBox As ComboBox
     Friend WithEvents CheckBox15 As CheckBox
     Friend WithEvents UsuariosModulosDataGridView As DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn3 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn4 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn17 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn18 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn19 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn21 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn20 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn5 As DataGridViewTextBoxColumn
-    Friend WithEvents Clientes As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn7 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn22 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn23 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn24 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn25 As DataGridViewTextBoxColumn
+    Friend WithEvents ABASDataSet As ABASDataSet
 End Class

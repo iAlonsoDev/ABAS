@@ -141,14 +141,14 @@ Public Class ClaseBusquedasDinamicas
 
 
 
-    Sub Llamausuariosmodulos(ByVal dgv As DataGridView)
+    'Sub Llamausuariosmodulos(ByVal dgv As DataGridView)
 
-        da = New SqlDataAdapter("select * from usuariosmodulos", cn)
-        dt = New DataTable
-        da.Fill(dt)
-        dgv.DataSource = dt
+    '    da = New SqlDataAdapter("select * from usuariosmodulos", cn)
+    '    dt = New DataTable
+    '    da.Fill(dt)
+    '    dgv.DataSource = dt
 
-    End Sub
+    'End Sub
 
     'Para pagos
     Sub Llenardgvpagos(ByVal id As String, ByRef dgv As DataGridView)
