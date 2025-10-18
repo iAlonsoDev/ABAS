@@ -823,7 +823,7 @@ Partial Class FormPrincipal
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 8
-        Me.TextBox1.Text = "17"
+        Me.TextBox1.Text = "18"
         Me.TextBox1.Visible = False
         '
         'Panel3
