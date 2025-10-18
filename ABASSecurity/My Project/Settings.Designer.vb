@@ -57,8 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=127.0.0.1;Initial Catalog=ABAS;Persist Security Info=True;User ID=ALO"& _ 
-            "NSODEV;Password=@6321JArt1;TrustServerCertificate=True")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=192.168.11.100;Initial Catalog=ABAS;Persist Security Info=True;User I"& _ 
+            "D=ABAS;Password=1234ABAS;TrustServerCertificate=True")>  _
         Public ReadOnly Property ABASConnection() As String
             Get
                 Return CType(Me("ABASConnection"),String)
