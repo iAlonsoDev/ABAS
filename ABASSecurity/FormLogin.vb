@@ -108,6 +108,7 @@ Public Class FormLogin
     End Sub
 
     Private Sub CmdSalir_Click(sender As Object, e As EventArgs) Handles cmdSalir.Click
+        Application.Exit()
         Me.Dispose()
     End Sub
 End Class
