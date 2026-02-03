@@ -1,0 +1,368 @@
+04-12-2021
+- Solucionado problema con reportview
+- Modificado todos los data set movidos a carpetas / se agregaron mas dataset para separar tablas correspondientes a cada uno
+- Clases movidas a carpetas
+- Se agrego el formulario & el reporte para imprimir el comprobante de entrega de uniforme
+- Se elimino el reporte de faltas ya que es el mismo con el 45 simplemente lLamaban al mismo rdlc
+- SQL - SE AGREGA LA VISTA & EL PROCEDIMIENTO, Entrega de uniforme
+
+14-12-2021
+- Revision de ejecucion y de todo funcional, post formateo de computadora
+- actualizacion con la sbase de datos para mi servidor
+- se modifico el texto del usuario agregando tambien el apellido
+- se modifico el nombre del formulario estadistica, a FormGraficas, pequeños cambios de diseño
+- habia un problema seleccionando los inventarios cuando era null la existencia
+- modificacion al reporte entrega de inventario, la politica de aceptacion se pierde
+
+15-12-2021
+- Se modifico la forma en como se guarda la informacion de solicitud detalle de uniforme y las formas de pago en un solo boton, utilizando los metodos
+para guardar por separado ya que cada uno valida ciertas cosas
+- se cambia ubicacion del id creacion para que  lo primero que se selecione sea el codigo de usuario
+- se repara la multiplicacion de la forma de pagos en el reporte veces por cantidad = totalpago
+para ello agregue en la vista el subtotal multiplicando dos campos "dbo.FormaPago.veces * dbo.FormaPago.cantidad AS Subtotal"
+// Resaltar: modificacion de la vista "vw_SolicitudUniforme" obligatoria en el server 
+// AHORA YA NO SE UTILIZA
+// ESTADO - HECHO
+- reparado filro camisa de centro --> camisa centro
+- repado trayendo la solucitud mas nueva se mostraba la primera creada si un empleado tenia una creada anteriormente
+
+18-12-2021
+- Validacion de cantidades de uniformes asignar, restando lo ya asignado. si es del mismo tipo
+- se agrega en el detalle se solicitud el almacen, este no llega  a la base ya que no lo necesito solamente para validacion de cantidades
+- Se valido que solo los usuarios con administracion puedan usar el tabpage 5 & 6 que corersponde asignar y recibir unifrome entregado a empleado.
+- agregar que limpie despues de asignar y llame de nuevo a las cantidades
+// Resaltar: modificacion al procedimiento almacenado - Inventario_SolicitudUniforme, ahora solicita el Id de la solicitud
+// y tambien ahora ejecuta otro procedimiento mas Inventario_DetalleSolicitudUniforme
+// ESTADO - HECHO
+- se actualizo el dataset ABASDATASET agregando el campo link de la tabla versionupdate 
+- agregar el id al reporte ya que ahora es parametro
+
+19-12-2021
+- agregar al datagriw el id del uniforme para hacer insert & update fila por fila
+- cada insert actualiza el inventario, por eso hecho un insert, si se cancela la solicitud se debe cargar lo que se agrego
+- se agrego setfocus() a todos los botones que hacen aparecer un panel y requiere filtro y en los formularios load cuando son para filtrar
+- reparado el datagriw de proveedores no se mostraba en fullwide
+- se agrega un tabcontrol a planilla, para que hagan los anticipos desde ahi, y se elimina desde la otra parte
+
+MI CODIGO 009949
+
+27-12-2021
+- Se selecciona la cantidad de pago mayor para comenzarhacer las deducciones desde la planilla
+- se cambia el metodo para registrar un empleado haciendo las validacones primero sin consultar la base de datos antes
+- la cantidad max extraida de forma de pago ya es suma en la cantidad anterior del pago para los uniformes, ahora falta validar las veces y el estado de pagado
+- cuando se hae el pago se deduce -1 la cantidad de veces y el estado pendiente se mantiene hasta llegar a 0 para setear a Pagada
+
+28-12-2021
+- se agrego el formulario para la devolucion de uniforme
+- se programo el evento new para limpiar el formularios
+- se programo el evento load con todo lo necesario y tambien algunas validaciones
+- se programo el evento crear devolucion para asignar un id de Devolucion
+// Resaltar: modificacion en la base de datos, tablas afectadas
+// [DevolucionUniforme]
+// [DevolucionUniformeDetalle]
+// ESTADO - HECHO
+- se agrego dos variables en la clase conexion, para permitir envio de parametros de la devolucion para post impresion
+- se agrega el evento insertar al datagriw, con validacion de no vacios
+- agregar que el rembolso es el total de los uniformes a devolver
+- se modifica el datasourse del datagriw a local para poder utilizarlo de cualquier forma
+- agregar cuando quiera buscar el empleado se haga focus al text de buscar
+- agregar el boton guardar para insertar lo que este en el datagriw
+- se reparar que inserta estado en estilo desde el datagriw, revisar el msj de doble insert vacio
+- resuelto no limpiaba el datagriw despues de guardar entonces volvia a validar vacio
+
+31-12-2021
+- validacion de que cada cosa se sume en el inventario principal de acuerdo a cada linea insertada, e la devolucion
+- se esperaba hacer desde el griw pero hay muchas aristas asi que se hara desde el insert asi como lo menciona la linea anterior
+- agregar 0 al rembolso por default ya que es numeric 18,0
+- al insertar que limpie los campos cantidad, talla y estilo.
+- crear vista para el reporte sql (vista temporal)
+// Resaltar: se crea procedimiento Inventario_DevoluciondeUniforme
+// falta agregarlo en el server principal
+// ESTADO - HECHO
+- Se agrega R_DevolucionUniforme & R_DevolucionUniforme.rdlc
+- modificacion al reporte entrega de uniforme hacer un test
+- darle presentacion al dataGridView en la busqueda de los id de solicitud
+- se modifcia en dataset InentariosDataSet
+- se elimina R_Armas y se crea uno nuevo devido a multiples fallas ocacionales
+- agregar la impresion directa despues de generar una devolucion de inventario
+
+02-01-2022
+- Se agrega formulario "FormInventarioMaterialesEquipos"
+- se linkea desde form principal
+- se agregan validacion de permiso RRHH, y de nivel 1 0 2 para recibir o entregar uniformes
+
+06-01-2022
+- agregar que en la planilla salga la devolucion de uniforme, la cantidad a pagar si aplica rembolso
+- se agrego a ajuste la cantidad retornada para no trastocar la tabla o los metodos
+- agregar que la cantidad se actualice al hacer el pago
+- agregar reportes en uniformes
+// Resaltar : Se crea procedimiento Inventario_UniformeSucursales y Inventario_MovimientosUniforme
+// falta agregarlo en el server principal
+// ESTADO - HECHO
+- se agrega formulario R_UniformeSucursal y el reporte R_UniformeSucursal
+- se agrega formulario R_MovimientosUniformes y el reporte R_MovimientosUniformes
+- modificacion al dataset InventarioDataSet
+
+07-01-2022
+- se agrega la impresion del comprobante de entrega y devolucion de uniforme desde planilla
+// Resaltar : SE crea tabla [Equipos] y [MovimientoEquipos]
+// falta agregarlo en el server principal
+// ESTADO - HECHO
+- modificacion al dataset ABASDataSet
+
+10-01-2022
+- se agrega funcion que genere el condigo del equipo en Automatico
+- Insertar equipo a datagriw y a sqlserver
+- se crea tabla para bloquear el inventario en auditoria solo lo puede bloquear rango gerencia desde la pantalla principal
+// Resaltar : SE crea tabla EstadoInventario para auditoria
+// Falta agregarlo en el server principal
+// ESTADO - HECHO
+
+11-01-2022
+- se agrega funcionalidad para busqueda de los codigo de equipo, filtrando con el combo ubicacion,
+almacen y estado
+- se permite actualizacion de ciertos campos
+- se agrega el mismo metodo de filtro para busqueda en la transferencia de equipo
+
+12-01-2022
+// Resaltar : se agrega 2 columnas a la tabla MovimientoEquipos "almacen envia y almacen recibe"
+// estado - HECHO
+- se modifica data se abasDataSet
+- se agrega funcion agregar empleado a la trasferencia de equipos
+- se remueve prueba de tranferencia exitosa con los campos necesarios
+- se agerga tab para recibir los movimientos de equipo
+- se agrega evento de link al cerrar sesion y se cambia el metodo ahora tiene que darle clik a la fotografia
+- se completa la trasferencia y la recibida de los equipos mas las actualizacion de los inventarios
+- se agrega los rdlc de R_Equipos y R_MovimientosEquipo
+
+14-01-2022
+- se modifica la tabla movimientos de equipos para ingresar el codigoequipo antes era idequipo
+- se agrego correlativo 00 al codigo pora extendenderlo a 999
+- se cambia el metodo de generar id de equipo ya que este deja como id primario el codigo generado por la Sucursales
+// resaltar : una recreacion de la tabla equipos y movimientosequipo
+// estado - HECHO
+- se realizan pruebas del reporte R_Equipos
+
+15-01-2022
+- SE AJUSTA EL METODO DE SUCURSALES PARA QUE MUESTRE MAS DE 100, ya que no se podian ver las otras
+// Resaltar : se crea procedimiento Inventario_MovimientosEquipos
+// estado - HECHO
+- se realiza diseño y pruebas del reporte movimientosequipo
+- se crea tabla Materiales
+// Resaltar : se crea tabla Materiales
+// estado - HECHO
+- se modifico abasDataSet para agregar la tabla materiales
+- se agregan comandos basicos en load y clear
+
+17-01-2022
+- se agrega tabla MaterialesRIngresos
+// Resaltar : se crea tabla MaterialesRIngresos
+// estado - HECHO
+- se programa el metodo de reguistro y historico de los Ingreso_CostosProduccion
+- solucion error cuando ya existia siempre guardaba los uniformes en el historico, este metodo es identico a los Uniformes
+por lo que se debea revisar el metodo tambien el en el formulario uniformes.
+- se realizan pruebas exitosas de recarga de materiales en las sucursales existentes
+
+18-01-2022
+- Se crea tabla [MovimientoMateriales]
+// Resaltar : se crea tabla MovimientoMateriales
+// estado - HECHO
+- se modifica el dataset abasDataSet agregando las dos nuevas tablas
+- se configura las cargas load en las tranferencias
+- se programa la transferencia de materiales y se ejectan pruebas exitosas
+- se prerara el grid para recibir la trasferencia de  materiales
+- se programa el boton de recibido y se ejecutan pruebas existosas, en base de datos tambien
+- se agrega formulario y reporte R_Materiales, R_MoviminetosMateriales
+- SE CRAR PROCEDIMIENTO Inventario_Materiales
+// Resaltar : se crea PROCEDIMIENTO Inventario_Materiales
+// estado - HECHO
+- se linkea el reporte de materiales y se ejecutan pruebas exitosas
+- se agrega link para recursos de inventario
+-  SE CREA PROCEDIMIENTO Inventario_MovimientosMateriales
+// Resaltar : se crea PROCEDIMIENTO Inventario_MovimientosMateriales
+// estado - HECHO
+
+19-01-2022
+- se realizaron ciertos ajustes al formuario de planilla por problemas con la entrega de uniformes y la carga de asignaciones
+- se reviso los eventos que involucran datimepicker para que trabajen con text no con value
+- otros pequeños ajustes que se encontraron mientras grababa los videos de como utilizar los inventarios tambien fueron resueltos  
+- se habilito el recurso de uso de inventarios desde el menu de Cierre
+- se reconfiguro la forma en que se abre para que no se bugueara
+- se oficializa el lanzamiento y se actualiza para que funcione con el server principal
+
+
+CAMBIOS A SOLICITUD
+--------------------------------------------------------------------------------------------
+
+
+29-01-2022 - 13-02-2022
+FECHAS DE CAMBIOS
+LOS COMENTARIOS EN AZUL SON LOS EVENTOS HECHOS PARA LA RESOLUCION DE LOS PEDIDOS EN REPARACION Y CAMBIOS, OBSERVACIONES Y DEMAS ENUMERADAS EN CATEGORIA DE LISTA MEDIANTE LA SOLICITUD RECIBIDA POR WHATSPP
+
+- Solución al problema del registro de usuarios, se estaba duplicando código entonces aplique una restricción
+- Resuelto el problema sobre los proveedores se amplió la dirección a 250 LETRAS y el nombre del proveedor a 150 LETRAS
+- Se resolvió el problema del reporte que no se generaba - Inventario Equipos
+
+1. En los almacenes falta la oficina de Tegucigalpa) posible se agreguen más roatán, Choluteca
+- se agrega tabla almacenes para poder traer la data desde ahí
+- se agrega FORMULARIO ALMACENES EN EL MODULO DE PROVEEDORES para administrar los almacenes creación y modificación sin limite
+- se crea un método para que todos los almacenes creados sean cargados en el combo respectivo en todos los módulos de inventarios y ser utilizados para incrementar el inventario a un alcanse mayor
+* armería - funciona con nuevo método resuelto para múltiples almacenes
+* usuarios - funciona con nuevo método resuelto para múltiples almacenes
+* equipos y materiales de seguridad - funciona con nuevo método resuelto para múltiples almacenes
+* mobiliario y equipo de oficina - funciona con nuevo método resuelto para múltiples almacenes
+* uniforme - funciona con nuevo método resuelto para múltiples almacenes
+* probados todos los reportes de inventarios con los nuevos almacenes
+
+2. En el registro de proveedores falta agregar quien es el representante o ente caso el contacto del proveedor porque solo nos permite agregar el nombre del cliente, pero no el contacto o quien nos atiende.
+* Se agrega nombre y telefono de contacto
+
+3. Solo nivel gerencial puede crear y eliminar proveedores y actualizar. 
+* habilitado solo para rango de Gerencia
+
+4. En vez del caí o siempre que lleve caí colocar el rtn del proveedor 
+* se agrega la opcion para agregar el rtn y se deja el cai tambien para que se utilice de ser necesario
+
+5. Debería de existir un módulo dentro de inventarios que diga equipo y materiales de seguridad y no estar dentro de mobiliario y equipo 
+- Se hace la separación en dos formularios y se asignan nombres y funciones distintas
+* Mobiliarios y Equipo de Oficina
+* Equipos y Materiales de Seguridad
+
+6.	En el registro de materiales en el ítem cinturones de revolver solo colocar cinturones aparte colocar funda, porta tiros ya sea de revolver o de escopeta) escopeta no tiene funda= 
+* Se agrega tabla Tipo Materiales para permitir ur creando nuevos elementos.
+Lic. disculpe en el punto 6 se puede considerar fundas de escopetas, teniendo en cuenta que en Tegucigalpa contamos con 3 unidades, cuando son de traslado en custodia
+[12:42, 1/26/2022] Brayan - ABAS: es correcto también considerar fundas de escopetas o en este caso sería maletín de escopeta
+[12:42, 1/26/2022] Brayan - ABAS: o mejor funda de escopeta pero que no diga funda porta escopeta no cabe el porta
+[12:46, 1/26/2022] Brayan - ABAS: y en las fundas revolver agregar l apalabra porta deberá leerse así.    Fundas porta Revolver
+[12:48, 1/26/2022] Brayan - ABAS: o fundas porta escuadra
+6.1
+[12:48, 1/26/2022] Brayan - ABAS: agregar ítems en equipo y materiales de seguridad las Pierneras que son equipos que se ajustan en la pierna y son porta escuadras o porta revolver.
+[12:48, 1/26/2022] Brayan - ABAS: agregar Porta Escuadras.
+[12:48, 1/26/2022] Brayan - ABAS: en los ítems de los equipos no cabe la palabra "Usado " porque por eso colocamos el estado si es A B C.   además, hace falta el ítem chalecos antibalas.
+[12:48, 1/26/2022] Brayan - ABAS: Los ítems de chaleco son:   1. Chalecos Antibalas ABAS  2. Chalecos Forros ABAS Pegatina 3. Chaleco Forro ABAS Serigrafia 
+4. Placas Blindadas Sin Rotulo 4. Chaleco Supervisores ABAS
+7.	Desaparecer ítem cinturones porta escopeta colocar en vez de eso solamente cinta porta escopeta
+* Listo
+
+8.	Falta colocar ítem:  toletes, porta tolete, porta chachas, chachas o esposas, detectores de metal, gas pimienta, taiser o pistola eléctrica, radios de comunicación, focos de mano, 
+celulares, gps, cuchillos, yatagán, todo esto registrar la marca o modelo o estilo y por tipo y en observaciones colocar algo necesario para identificación. 
+* Se agregan todos los elementos
+
+9.	 los registros de equipos y materiales de seguridad   enlazarlo al proveedor podría ser a una orden de compra etc. 
+Para que lo podamos identificar o buscar a que lote pertenece es más fácil poder ubicarlo. 
+* se agrega la opcion para agregar idproveedor, con esto se podra hacer macht
+
+10.	Falta una sección para registrar patrulla y motocicletas que se registren incluyendo todas las características de los mismos.
+* se agrega tabla para guardar vehiculos y tabla para guardar fotos de vehiculos
+* se crea formulario que permite el registro y administracion de la informacion referente a vehivulos
+* se crea reporte de vehiculos por tipo
+
+10.1	Falta una sección para registrar municion.
+* se agrega tabla para guardar la municion, tabla para guardar los tipos de municion y tabla para guardar fotos de municion
+* se crea formulario que permite el registro de la municion, en el formulario de armeria
+* se crea tabla para guardar movimientos de muncion
+* se crea formulario que permite hacer movimientos entre almacenes y sirve para buscar entre el inventario
+* se crea 2 reportes Cantidad de Municion por Almacen, Movimiento de Municion
+
+11.	Me gustaría que en las armas y equipos y todo lo de inventarios poder registrar también una foto en este caso sería primordial registrar fotos de armas ya que cada arma tiene su serie,
+fotos de vehículos y fotos de motocicletas y en los demás equipos y materiales de seguridad que vaya una foto representativa porque muchos no conocerán que es un taiser que es un tolete etc. 
+entonces si se pudiera que refleje una foto a que nos referimos.  Esto lo que, visto en algunas tiendas como la mundial, diunsa etc. que muestra la foto del artículo.
+* se crear tabla ArmeriaFotos para guardar fotos de armas y al buscar una arma o recibir se mostrara la foto
+* se crear tabla EquiposFotos para guardar fotos de equipos y mobiliario de oficina y al buscar un elemento se mostrara la foto
+
+12. Pedido por departamento de recursos Humanos
+- actualmente el módulo de documentos solo se guardaba 1 fotos de la solicitud de empleo y requieren que sea tres fotos referentes
+- se agrega solicitud2 y solicitud3 para poder guardar las 3 fotos a la solicitud de empleo
+- se agrega campo Contrato3  porque antes solo se guardaban 2 y se modifica el método para guardar y recorrer tanto el currículo y el contrato
+
+13. [11:20, 1/29/2022] Brayan - ABAS: MOVIMIENTOS DE ARMAS. 
+
+PARA ELIGIR EL ENCARGADO O RESPONSABLE D ERECIBIRLA AGREGAR A LOS DE OPERACIONES Y ADMINISTRACION TAMBIEN PORQUE POR VECES VA A BODEGA DE CADA SUCURSAL COMO RESPALDO.  
+* solo estaba operaciones, se habilita administracion
+
+QUE LA PERSONA QUE LA RECIBE QUE LA REGISTRE A UN CLIENTE CUANDO LE DE RECIBIR ARMA Y SI ES PARA INVENTARIO O ALMACEN
+* Esto es control interno, cuando la persona la recibe tiene la postetad de hacer la asignacion a un cliente, almacen o desecharla dependiendo los permisos. pero ya esta programado,
+solo deben seguir un procedimiento que usted determine.
+
+DE IGUAL MANERA QUE COLOQUE LA OBERVACION QUE VA A BODEGA O A INVENTARIO EN SU DEFECTO QUE REGISTRE A QUE CLIENTE SE LE ASIGNARA
+* Tambien ya esta programada la caja de observacion en los movimientos de armas, cualquiera que sea
+
+[11:33, 1/29/2022] Brayan - ABAS: CUANDO REVISAMOS LOS MOVIMIENTOS Y VEMOS LA UBICACIÓN DEL INVENTARIO SE LEE SOLO LA PALABRA ALMACEN
+* dependiendo el tipo de movimimiento se mostrara, demosle mas uso, para solicitar mas cambios ya sea en reporte o en la aplicacion, porque esa funcion esta bien dinamica.
+* ejemplo voy a mover a villanueva, esta arma la ubicacion inventraio dice almacen pero esta informacion solo es de visualizacion la logica real va debajo, 
+hice pequeños cambios de estetica para que se entienda mejor.
+ 
+
+DEBERIA LEERSE COMPETO QUE ALMACEN RECIBE EJEMPLO ALAMCEN VILLANUEVA O EN TODO CASO EL NOMBRE DE LA SUCUSAL YA SEA VILLANUEVA, CEIBA ETC
+CUANDO MOVEMOS UN ARMA LOCAL SI ES NECESARIO ASIGANRLA A UN SUPEVISOR Y ASIGANRLA A UN CLIENTE, 
+PERO CUANDO MOVEMOS UN ARMA DE ALMACEN A ALAMCEN NO ES NECESARIO ASIGNARLO A UN CLIENTE YA QUE EL ENCARGADO DE CADA ALMACEN
+ES EL QUE HARA EL MOVIMIENTO DE FORMA LOCAL.
+* cuando seleccionamos el tipo de movimiento el formulario se adapta a los nuevos cambios, si es almacen aparecen los almacenes, si es a un cliente igual las sucursales, y asi sucesivamente
+
+ Notas de cambio – Para Considerar en La Base De Datos ABAS
+•	Tabla Materiales y Equipos de Seguridad Cambia Totalmente
+•	Tabla Uniformes Cambia Totalmente
+- Las los uitlizan lo que son los almacenes dimamicos, 
+ejemplo si el almacen es SPS el almacen real sera ALM2
+			    VILLANUEVA - ALM3
+y asi sucesivamente se mostrara con el nombre pero operativamente en programacion se trabajara por alm1, alm2 etc.
+
+
+---------------------------------------------------------------------------------------
+
+
+19-02-2022
+UNIFORMES
+Sub modulo de registro de uniformes
+-	se recrea la tabla que guarda los uniformes para un diferente funcionamiento por cuestiones de no poder hacer el reporte
+-	se agrega campo de Talla
+Sub modulo de movimiento de uniforme
+-	 se agrega talla a la tabla MovimientoUniforme
+Reportes de Uniformes
+-	Se modifica el procedimiento Inventario_UniformeSucursales y se repara el reporte
+-	Se modifica Inventario_MovimientosUniformen agregamos Talla y se prueba el reporte
+
+ARMERIA
+
+[09:17, 2/15/2022] +504 3151-1104: 1.Cuando se hace el ingreso de la serie del arma(Armeria y municion) y se intenta buscar una serie en especifico no aparece.
+
+•	Hice pruebas de busqueda funcionan todas por favor especificar mas o mostrar ejemplo
+
+[09:21, 2/15/2022] +504 3151-1104: 4. Una vez que se hace el registro del arma en sistema ya no se puede modificar, ya se para poner foto o agregar si tiene permiso por mencionar unos ejemplos.
+
+•	Se agrega evento de carga a la arma para poder actualizarla incluyendo la foto
+
+
+[09:18, 2/15/2022] +504 3151-1104: 2.No sale el calibre 12(Escopeta)
+•	Se agrega el calibre
+
+todas esas armas estan en ceiba pero la reporteria solo permite por tipo de arma no por almacen ceiba. ademas no esta el titulo del reporte de donde es el reporte.
+•	Se agrega reporte que Armas por Almacen / Procedimiento [ArmasAlmacen]
+•	Se modifica el reporte anterior [Armas] para que muestre el almacen “sps, villanueva etc…”
+•	Se modifica el reporte movimiento de armas [MovimientosArma]para que muestre los almacenes
+MATERIALES
+•	Se recrea la tabla de materiales y se genera nuevo metodo de operacion para evitar posibles problemas con los reportes
+•	Se modifica el reporte [Inventario_Materiales] “Materiales por almacen”
+
+----------------------------------------------------------------------------------------
+
+Modulo de RRHH
+- Se agrega campo precio en tabla registro de carnet (para guardar el valor a descontar la siguiente planilla)
+- los registros ahora "funcionaran en automatico (Gratis primera impresion, Cobro si es segunda vez)
+- Este ingreso se hara en automatico cuando se le de al boton de imprimir
+- Si el empleado ya esta registrado que se imprimio carnet se solicitara validacion de Gerencia para volver a imprimir 
+(Mostrando dos opciones si desea imprimir gratis o cobro)
+
+- Se agrega validacion para no agregar departamentos vacios, ni repetidos
+- Se agrega validacion que no permite guardar sin foto del empleado
+- Se agrega validacion que no se cree sin cuenta de banco
+- Se agrega seccion para setear (Precios de carnet),
+  Se agrega tabla para llevar un registro de los precios de carnet (ejemplo 10-05-2022 50 Lps, pero ahora 15-05-2022 70 Lps)
+
+Modulo de planilla
+- Se agrega que busque en automatico los carnet agregados por segunda vez, cobrando el valor al momento de registrar
+- Mostrando un msj de esta deduccion
+- El valor se agregara en el campo de Otra deduccion
+
+
+

@@ -1,0 +1,84 @@
+USUARIO DE PRUEBA
+010313
+
+
+9:06 PM 7/13/2023
+
+- agregar en el campo de observacion en la tabla de empleados a (500)
+- se ajusta el codigo QR y se adapta el text de observacion
+
+
+
+- Se crea la tabla : TipoDocumentosEmpleados
+
+CREATE TABLE [dbo].[TipoDocumentosEmpleados](
+	[idtipodoc] [int] IDENTITY(1,1) NOT NULL,
+	[nombretipo] [nvarchar](150) NOT NULL,
+ CONSTRAINT [PK_TipoDocumentosEmpleados] PRIMARY KEY CLUSTERED 
+(
+	[idtipodoc] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+- Se crea la tabla : DocumentosEmpleados
+
+CREATE TABLE [dbo].[DocumentosEmpleados](
+	[iddocumento] [int] IDENTITY(1,1) NOT NULL,
+	[idtipodoc] [int] NULL,
+	[codigo] [nvarchar](6) NULL,
+	[documento] [image] NULL,
+	[fechacreacion] [datetime] NULL,
+	[usuariocreacion] [nvarchar](50) NULL,
+ CONSTRAINT [PK_DocumentosEmpleados] PRIMARY KEY CLUSTERED 
+(
+	[iddocumento] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+SE CREAN 2 PROCEDIMIENTOS ALMACENADOS PARA REPORTES
+
+
+ALTER PROC [dbo].[RRHH_DocumentosEmpleados]
+@codigo nvarchar(6)
+AS
+BEGIN
+SELECT T.idtipodoc, T.nombretipo, E.codigo, E.nombres +' '+ E.apellidos Nombre_Completo, COUNT(D.iddocumento) cant_documentos FROM  dbo.TipoDocumentosEmpleados T
+LEFT OUTER JOIN  dbo.DocumentosEmpleados D ON
+ D.idtipodoc =  T.idtipodoc
+ LEFT OUTER JOIN Empleados E ON
+ E.codigo =  D.codigo
+WHERE D.codigo = @codigo
+ GROUP BY  T.idtipodoc, T.nombretipo, E.codigo, E.nombres, E.apellidos
+ ORDER BY T.nombretipo ASC
+ END
+
+ALTER PROC [dbo].[RRHH_TipoDocumentosEmpleados]
+@tipo nvarchar(150)
+AS
+BEGIN
+SELECT T.idtipodoc, T.nombretipo, E.codigo, E.nombres +' '+ E.apellidos Nombre_Completo, COUNT(D.iddocumento) cant_documentos FROM  dbo.TipoDocumentosEmpleados T
+LEFT OUTER JOIN  dbo.DocumentosEmpleados D ON
+ D.idtipodoc =  T.idtipodoc
+ LEFT OUTER JOIN Empleados E ON
+ E.codigo =  D.codigo
+WHERE  T.nombretipo = @tipo
+ GROUP BY  T.idtipodoc, T.nombretipo, E.codigo, E.nombres, E.apellidos
+ ORDER BY T.nombretipo ASC
+ END
+
+
+QUERY PARA MIGRACION
+
+INSERT INTO DocumentosEmpleados
+(   [idtipodoc]
+      ,[codigo]
+      ,[documento]
+      ,[fechacreacion]
+      ,[usuariocreacion]
+)
+SELECT 2, codigo, solicitud1, GETDATE(), 'ALONSODEV'
+FROM Imagenes
+WHERE solicitud1 IS NOT NULL
